@@ -67,7 +67,7 @@ public class UsersController : BaseApiController
         return Ok();
     }
 
-    [HttpPut("{id}/activate")]
+    [HttpPatch("{id}/activate")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
 
@@ -78,7 +78,7 @@ public class UsersController : BaseApiController
         return this.Ok();
     }
 
-    [HttpPut("{id}/Deactivate")]
+    [HttpPatch("{id}/Deactivate")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
 

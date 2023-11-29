@@ -16,9 +16,16 @@ public class UserProfile : BaseEntity<int>
         PersonalNumber = personalNumber ?? throw new ArgumentNullException($"User {nameof(personalNumber)} cannot be null or empty");
     }
 
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string PersonalNumber { get; set; }
+    public string FirstName { get; private set; }
+    public string LastName { get; private set; }
+    public string PersonalNumber { get; private set; }
 
     public User? User { get; set; }
+
+    public void ChangeDetails(string firstName, string lastName, string personalNumber)
+    {
+        FirstName = firstName ?? throw new ArgumentNullException($"User {nameof(firstName)} cannot be null or empty");
+        LastName = lastName ?? throw new ArgumentNullException($"User {nameof(lastName)} cannot be null or empty");
+        PersonalNumber = personalNumber ?? throw new ArgumentNullException($"User {nameof(personalNumber)} cannot be null or empty");
+    }
 }
